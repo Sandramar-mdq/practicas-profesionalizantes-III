@@ -1,0 +1,61 @@
+.inputx{
+    background-color:#FFFFFF;
+    width:235px;
+    padding:12px;
+    color:rgb(8, 8, 8);
+    font-family:arial;
+    font-weight:normal;
+    font-size:150%;
+    text-align:right;
+    }
+
+.bluebuttons{
+    background-color:#4040BF;
+    width:100%;
+    padding:12px;
+    color:white;
+    font-family:arial;
+    font-weight:bold;
+    font-size:75%;
+    box-shadow: 0px 10px 2px 0px #2c2f8d;
+    border-color: #1e1e36;
+    border-radius: 8px;
+}
+
+.greenbuttons{
+    background-color : #00ff00;;
+    width:100%;
+    padding:12px;
+    color:rgb(9, 9, 9);
+    font-family:arial;
+    font-weight:bold;
+    font-size:85%;
+    box-shadow: rgb(61, 113, 78) 0px 10px 2px 0px;
+    border-color: #294929;
+    border-radius: 8px;
+}
+.yellowbuttons{
+    background-color:#F0C80E;
+    width:100%;
+    padding:12px;
+    color:white;
+    font-family:arial;
+    font-weight:bold;
+    font-size:75%;
+    box-shadow: rgb(162, 157, 8) 0px 10px 2px 0px;
+    border-color: #2b2407;
+    border-radius: 8px;
+}
+
+.redbuttons{
+    background-color:#ff0000;
+    width:265px;
+    padding:12pX;
+    color:white;
+    font-family:arial;
+    font-weight:bold;
+    font-size:85%;
+    box-shadow: rgb(241, 200, 200) 0px 5px 7px 0px;
+    border-color: rgb(31, 5, 5);
+    border-radius: 4px;
+}
