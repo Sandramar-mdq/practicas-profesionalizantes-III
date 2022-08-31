@@ -1,0 +1,97 @@
+.background{
+    border: 10px ridge rgb(32, 5, 153); 
+    padding: 15px; 
+    background: linear-gradient(to bottom right, rgb(127, 4, 158), rgb(241, 141, 8), rgb(4, 63, 189));
+    width: 20%; height: 100%;
+    background-position: 50% 50%;
+}
+
+.inputx{
+    background-color:whitesmoke;
+    opacity: 70%;
+    width:228px;
+    padding:12px;
+    color:black;
+    font-family:arial;
+    font-weight:bold;
+    font-size:100%;
+    text-align:right;
+    border-style: ridge; 
+    border-width: 5px;
+    border-color: rgb(78, 95, 78);
+    }
+
+.bluebuttons{
+background-color:#2c1ef1;
+opacity: 50%;
+width:60px;
+padding:12px;
+color:white;
+font-family:arial;
+font-weight:bold;
+font-size:75%;
+box-shadow: rgb(22, 60, 172) 3px 5px 5px;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+border-radius: 5px;
+border-style: groove; 
+border-width: 4px;
+border-color: rgb(40, 2, 143);
+}
+
+.greenbuttons{
+    background-color:rgb(7, 83, 7);
+    opacity: 50%;
+    width:60px;
+    padding:12px;
+    color:white;
+    font-family:arial;
+    font-weight:bold;
+    font-size:75%;
+    box-shadow: rgb(61, 113, 78) 3px 5px 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    border-style: groove; 
+    border-width: 4px;
+    border-color: rgb(19, 95, 19);
+}
+
+.yellowbuttons{
+    background-color:rgb(211, 104, 5);
+    opacity: 50%;
+    width:60px;
+    padding:12px;
+    color:blueviolet;
+    font-family:arial;
+    font-weight:bold;
+    font-size:75%;
+    box-shadow: rgb(224, 217, 9) 3px 5px 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    border-style: groove; 
+    border-width: 4px;
+    border-color: rgb(146, 134, 23);
+}
+
+.redbuttons{
+background-color:rgb(105, 6, 6);
+opacity: 50%;
+width:259px;
+padding:12px;
+color:white;
+font-family:arial;
+font-weight:bold;
+font-size:75%;
+box-shadow: rgb(160, 18, 18) 3px 5px 5px;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+border-radius: 5px;
+border-style: ridge; 
+border-width: 4px;
+border-color: rgb(126, 2, 2);
+}
+
+
+    
