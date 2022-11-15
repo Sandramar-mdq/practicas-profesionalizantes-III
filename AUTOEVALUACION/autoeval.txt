@@ -1,0 +1,52 @@
+-- Adminer 4.8.1 MySQL 8.0.29 dump
+
+SET NAMES utf8;
+SET time_zone = '+00:00';
+SET foreign_key_checks = 0;
+SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
+
+DELIMITER ;;
+
+DROP PROCEDURE IF EXISTS `deleteReg`;;
+CREATE PROCEDURE `deleteReg`(IN `ID` int(11))
+BEGIN
+	DELETE FROM user WHERE idUser = ID;
+END;;
+
+DROP PROCEDURE IF EXISTS `insertReg`;;
+CREATE PROCEDURE `insertReg`(IN `id` int(11) unsigned, IN `nombre` varchar(45), IN `apellido` varchar(45), IN `correo` char(45))
+BEGIN
+	INSERT INTO user (idUser, userName, surname, email)
+	VALUES  (id, nombre, apellido, correo);
+
+END;;
+
+DROP PROCEDURE IF EXISTS `listUser`;;
+CREATE PROCEDURE `listUser`()
+BEGIN
+	SELECT * FROM `autoeval`.user;
+END;;
+
+DROP PROCEDURE IF EXISTS `updateReg`;;
+CREATE PROCEDURE `updateReg`(IN `id` int, IN `nombre` varchar(45), IN `apellido` varchar(45), IN `correo` varchar(45))
+BEGIN
+	UPDATE user
+        SET userName = nombre, surname = apellido, email = correo WHERE idUser = id;
+END;;
+
+DELIMITER ;
+
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE `user` (
+  `idUser` int NOT NULL,
+  `userName` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8_unicode_ci NOT NULL,
+  `surname` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`idUser`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
+
+INSERT INTO `user` (`idUser`, `userName`, `surname`, `email`) VALUES
+(2,	'Bart',	'Simpson',	'diebartdie@sapo.com.ar'),
+(3,	'sapo',	'pepe',	'sapopepe@sapo.com.ar'),
+(4,	'coyote',	'acme',	'coyote@acme.com.ar')
+ON DUPLICATE KEY UPDATE `idUser` = VALUES(`idUser`), `userName` = VALUES(`userName`), `surname` = VALUES(`surname`), `email` = VALUES(`email`);
