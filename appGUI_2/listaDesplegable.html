@@ -1,0 +1,138 @@
+<!--
+   listaDesplegable.html
+   
+   Copyright 2022 matt <matt@matt-1201PN>
+   
+   This program is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; either version 2 of the License, or
+   (at your option) any later version.
+   
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+   
+   You should have received a copy of the GNU General Public License
+   along with this program; if not, write to the Free Software
+   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+   MA 02110-1301, USA.
+   
+   
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<title>Lista Desplegable</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+<body>
+<!--
+	<div>
+    <a class="w3-bar-item w3-button" onclick="myAccordion('demo')">Dropdown <i class="fa fa-caret-down"></i></a>
+    <div id="demo" class="w3-hide">
+      <a class="w3-bar-item w3-button" href="#">Link</a>
+      <a class="w3-bar-item w3-button" href="#">Link</a>
+      <a class="w3-bar-item w3-button" href="#">Link</a>
+    </div>
+  </div>	
+-->
+</body>
+
+<script type="text/javascript">
+	
+class BotonDesplegableController
+{
+	constructor( view )
+	{
+		this.innerView = view;
+	}
+	
+	onclick()
+	{
+	  let x = this.innerView.container;
+	  if (x.className.indexOf("w3-show") == -1) {
+		x.className += " w3-show";
+		x.previousElementSibling.className += " w3-theme";
+	  } else { 
+		x.className = x.className.replace("w3-show", "");
+		x.previousElementSibling.className = 
+		x.previousElementSibling.className.replace(" w3-theme", "");
+	  }
+	}
+	
+}
+	
+class BotonDesplegable extends HTMLElement
+{
+	constructor()
+	{
+		super();
+		
+		this.button = document.createElement('a');
+		this.button.classList.add("w3-bar-item", "w3-button");
+		this.button.innerText = 'Dropdown *';
+		
+		this.container = document.createElement('div');
+		this.container.classList.add("w3-hide");
+		
+		this.appendChild(this.button);
+		this.appendChild(this.container);
+		
+		this.innerController = new BotonDesplegableController(this);
+	}
+	
+	addItem()
+	{
+		let item = document.createElement('div');
+		item.classList.add('w3-bar-item', 'w3-button');		
+		this.container.appendChild(item);
+		return item;
+	}
+	
+	addBotonDesplegable()
+	{
+		let groupItem = new BotonDesplegable();
+		this.container.appendChild(groupItem);
+		return groupItem;
+	}
+	
+	connectedCallback()
+	{
+		this.addEventListener('click', () => this.innerController.onclick() );
+	}
+	
+	disconnectedCallback()
+	{
+		
+	}
+	
+}
+	
+
+
+
+window.addEventListener('load', () =>
+{
+	console.log('dom cargado');
+	customElements.define('x-btn-desplegable', BotonDesplegable );
+	let btn = new BotonDesplegable();
+	
+	let item1 = btn.addItem();
+	item1.innerText = 'Crear Usuario';
+	
+	let group = btn.addBotonDesplegable();
+	group.addItem.innerText = 'Boton dentro de otro menu';
+	
+	document.body.appendChild(btn);
+	
+});
+
+</script>
+
+</html>

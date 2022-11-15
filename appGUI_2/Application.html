@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!-- saved from url=(0063)https://www.w3schools.com/w3css/tryw3css_examples_material.htm# 
+sacar el boton close - dejar menu HOME fijo y los items de abajo
+comparar la separacion de los archivos con la calc 5
+revisar/quitar "fa fa remove"
+accordion es la clase que quita el boton
+-->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><title>ISFT 151</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="./W3.CSS_files/w3.css">
+<link rel="stylesheet" href="./W3.CSS_files/w3-theme-teal.css">
+<link rel="stylesheet" href="./W3.CSS_files/css">
+<link rel="stylesheet" href="./W3.CSS_files/font-awesome.min.css"><style>
+body {font-family: "Roboto", sans-serif}
+.w3-bar-block .w3-bar-item {
+  padding: 16px;
+  font-weight: bold;
+}
+</style>
+</head><body>
+  <img src="logo1" style="width:25%" alt="Responsive">
+  <nav class="w3-sidebar w3-bar-block w3-collapse w3-animate-left w3-card" style="z-index:3;width:250px;" id="mySidebar">
+  <a class="w3-bar-item w3-button w3-hide-large w3-large" href="javascript:void(0)" onclick="w3_close()">Close <i class="fa fa-remove"></i></a>
+  <a class="w3-bar-item w3-button w3-teal" href="https://www.w3schools.com/w3css/tryw3css_examples_material.htm#">Home</a>
+  <a class="w3-bar-item w3-button" href="https://www.w3schools.com/w3css/tryw3css_examples_material.htm#">Link 1</a>
+  <a class="w3-bar-item w3-button" href="https://www.w3schools.com/w3css/tryw3css_examples_material.htm#">Link 2</a>
+  <a class="w3-bar-item w3-button" href="https://www.w3schools.com/w3css/tryw3css_examples_material.htm#">Link 3</a>
+  <a class="w3-bar-item w3-button" href="https://www.w3schools.com/w3css/tryw3css_examples_material.htm#">Link 4</a>
+  <a class="w3-bar-item w3-button" href="https://www.w3schools.com/w3css/tryw3css_examples_material.htm#">Link 5</a>
+  <div>
+    <a class="w3-bar-item w3-button" onclick="myAccordion(&#39;demo&#39;)" href="javascript:void(0)">Dropdown <i class="fa fa-caret-down"></i></a>
+    <div id="demo" class="w3-hide">
+      <a class="w3-bar-item w3-button" href="https://www.w3schools.com/w3css/tryw3css_examples_material.htm#">Link</a>
+      <a class="w3-bar-item w3-button" href="https://www.w3schools.com/w3css/tryw3css_examples_material.htm#">Link</a>
+      <a class="w3-bar-item w3-button" href="https://www.w3schools.com/w3css/tryw3css_examples_material.htm#">Link</a>
+    </div>
+  </div>
+</nav>
+
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
+
+<div class="w3-main" style="margin-left:250px;">
+
+//<div id="myTop" class="w3-container w3-top w3-theme w3-large">
+//  <p><i class="fa fa-bars w3-button w3-teal w3-hide-large w3-xlarge" onclick="w3_open()"></i>
+//  <span id="myIntro" class="w3-hide">W3.CSS: Introduction</span></p>
+//</div>
+
+<header class="w3-container w3-theme" style="padding:64px 32px">
+  <h1 class="w3-xxxlarge">ISFT 151</h1>
+</header>
+
+
+
+<div class="w3-panel w3-light-grey w3-padding-16 w3-card">
+<div class="w3-content" style="max-width:800px">
+<div class="w3-row">
+  <div class="w3-col m6">
+   
+  </div>
+</div>
+</div>
+</div>
+
+
+<div class="w3-row">
+  <div class="w3-col m6">
+   
+  </div>
+</div>
+</div>
+</div>
+
+</div>
+
+<footer class="w3-container w3-theme" style="padding:32px">
+  <p>Footer information goes here</p>
+</footer>
+     
+</div>
+
+<script>
+// Open and close the sidebar on medium and small screens
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+
+// Change style of top container on scroll
+window.onscroll = function() {myFunction()};
+function myFunction() {
+  if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+    document.getElementById("myTop").classList.add("w3-card-4", "w3-animate-opacity");
+    document.getElementById("myIntro").classList.add("w3-show-inline-block");
+  } else {
+    document.getElementById("myIntro").classList.remove("w3-show-inline-block");
+    document.getElementById("myTop").classList.remove("w3-card-4", "w3-animate-opacity");
+  }
+}
+
+// Accordions
+function myAccordion(id) {
+  var x = document.getElementById(id);
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+    x.previousElementSibling.className += " w3-theme";
+  } else { 
+    x.className = x.className.replace("w3-show", "");
+    x.previousElementSibling.className = 
+    x.previousElementSibling.className.replace(" w3-theme", "");
+  }
+}
+</script>
+     
+
+ </body></html>
